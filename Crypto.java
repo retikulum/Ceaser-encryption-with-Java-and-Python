@@ -5,13 +5,15 @@ public class Crypto{
 		List<String> string_list = new ArrayList<String>();
 		Scanner input = new Scanner(System.in);
 		int ascii ;
-		String word = input.next();
+		String word = input.nextLine();
 		char word_char[] = word.toCharArray();
 		for(int i = 1 ;i < 26; i++){
 			for(int j = 0 ; j < word.length();  j++){
 			ascii= (int)word_char[j];
 			if(ascii + i > 122)
 			 	word_char[j] = (char)(ascii+i-26);
+			else if(ascii == 32)
+				continue;
 			else
 				word_char[j] = (char)(ascii + i);
 
